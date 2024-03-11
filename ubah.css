@@ -1,0 +1,32 @@
+.testing{
+
+	list-style: none;
+	text-align: center;
+	padding:10px 450px;
+}
+body{
+	background-color: #e50d43;
+}
+input{
+	background-color: #303245;
+	border-radius: 20px;
+	box-sizing: border-box;
+	color:#eee;
+	font-size: 12px;
+	outline: 0;
+	padding: 5px 18px;
+	width: 60%;
+	height: 30px;
+}
+
+fieldset{
+	background-color: #dc2d56;
+	border-radius: 30px;
+}
+button{
+	background-color: #e026cd;
+}
+button:hover{
+	background-color: #e90f58;
+	transition: 0.5s;
+}

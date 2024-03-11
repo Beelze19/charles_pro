@@ -1,0 +1,38 @@
+.test{
+			list-style: none;
+			text-align: center;
+			padding:10px 450px;
+
+	}
+	body{
+			background-color:#37ffaf;
+
+	}
+
+	button{
+		background-color: skyblue;
+		width: 90px;
+	}
+	button:hover{
+			background-color: rebeccapurple;
+			transition: 0.5s;
+}
+input{
+	background-color:#26d991;
+  	border:none;
+  	border-bottom:2px solid;
+  	background-color: #26d991;
+  	width: 290px;
+}
+input:hover{
+	transition: 1.0s;
+	background-color: #eee;
+}
+fieldset{
+	background-color:#26d991;
+	border-radius: 30px;
+	margin: 15px;
+	height: 430px;
+}
+
+
