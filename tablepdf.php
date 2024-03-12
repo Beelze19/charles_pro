@@ -1,51 +1,44 @@
 <?php 
-	require 'function.php';
+require 'function.php';
 
-	$art = query("SELECT * FROM artikel");
+$pem = query("SELECT * FROM pembayaran");
 
-	if(isset($_POST["cari"])){
-		$art = cari($_POST['keyword']);
-	}
+
+
 
  ?>
 
  <!DOCTYPE html>
  <html>
  <head>
- 	<meta charset="utf-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<title>pdf</title>
  	<style type="text/css">
- 		th{
- 			background-color: #dedede;
- 			color: #333333;
- 			font-weight: bold;
- 		}
  		table{
- 			width: 100%;
+ 			width: 100px;
+ 			height: 100px;
  		}
  	</style>
  </head>
  <body>
-
- 	<table border="3" cellpadding="3" cellpadding="2">
+ <table border="1">
+ 	<tr>
+ 		<th>NO</th>
+ 		<TH>TANGGAL PEMBAYARAN</TH>
+ 		<th>NOMINAL</th>
+ 		<TH>NISN</TH>
+ 		<th>GAMBAR</th>
+ 	</tr>
+ 	<?php $i=1; ?>
+ 	<?php foreach($pem as $row)  : ?>
  		<tr>
- 			<th>NO</th>
- 			<th>Judul</th>
- 			<th>Artikel</th>
- 			<th>Gambar</th>
+ 			<td><?php echo $i; ?></td>
+ 		<td><?php  echo $row["tanggal_pembayaran"]; ?></td>
+ 		<td><?php  echo $row["nominal"]; ?></td>
+ 		<td><?php  echo $row["nisn"]; ?></td>
+ 		<td><img src="imgs/<?php  echo $row["gambar"]; ?>"></td>
  		</tr>
- 		<?php $i=1; ?>
- 		<?php foreach($art as $row) : ?>
- 			<tr>
- 				<td><?php echo $i; ?></td>
- 				<td><?php echo $row['judul']; ?></td>
- 				<td><?php echo $row['Artikel']; ?></td>
- 				<td><img src="imgs/<?php echo $row ['Gambar']; ?>" width="170px" height="120px"></td>
- 			</tr>
- 			<?php $i++; ?>
- 		<?php endforeach; ?>
- 	</table>
- 
+ 		<?php $i++; ?>
+ 	<?php endforeach; ?>
+ </table>
  </body>
  </html>
